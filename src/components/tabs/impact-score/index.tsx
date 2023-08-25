@@ -7,15 +7,14 @@ const ImpactScoreTab = ({
 }) => {
 	return (
 		<div
-			className={`container flex flex-col justify-center items-center transition-all duration-300  ${
-				isScrolled
-					? 'h-[57px] w-screen border-t border-b border-solid border-gray-300 '
-					: ''
+			className={`flex flex-col justify-center items-center transition-all duration-300  ${
+				isScrolled &&
+				'h-[57px] !w-screen border-t border-b border-solid border-gray-300'
 			}`}
 		>
 			{!isScrolled && (
-				<div className="text text-center my-5">
-					<p className="text-sm" style={{ color: '#4b4b4b' }}>
+				<div className="text text-center my-1">
+					<p className="text-sm text-[#4b4b4b]">
 						Enter the amount you wish to invest
 					</p>
 				</div>

@@ -7,6 +7,9 @@ export default {
 			questrial: ['Questrial', 'Arial', 'sans-serif'],
 			body: ['Questrial', 'Arial', 'sans-serif'],
 		},
+		// screens: {
+		// 	'xsm-max-asd': { max: '500px' },
+		// },
 	},
 	plugins: [],
 };
