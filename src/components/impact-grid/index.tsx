@@ -3,7 +3,7 @@ import './style.css';
 
 const ImpactGrid = () => {
 	return (
-		<div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 pt-[30px] pr-[30px] pb-[35px] pl-[40px] border border-red-500 justify-center items-center">
+		<div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 pt-[30px] pr-[30px] pb-[35px] pl-[40px] justify-center items-center">
 			<ImpactCard />
 			<ImpactCard />
 			<ImpactCard />

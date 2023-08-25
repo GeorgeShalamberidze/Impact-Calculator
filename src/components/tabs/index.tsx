@@ -1,20 +1,25 @@
+import useScroll from '@/hooks/useScroll';
 import CumulatedImpactTab from './cumulated-impact';
+import useTabs from './hook/useTabs';
 import ImpactScoreTab from './impact-score';
 import './style.css';
-import { useState } from 'react';
 
 const Tabs = () => {
-	const [amount, setAmount] = useState<number>(3000);
-	const [activeTab, setActiveTab] = useState(0);
+	const { activeTab, amount, handleTabClick } = useTabs();
+	const { isScrolled } = useScroll();
 
-	const handleTabClick = (tabIndex: number) => {
-		setActiveTab(tabIndex);
-	};
 	return (
-		<div className="tabs_wrapper h-[120px] flex items-center justify-center w-full relative ">
+		<div
+			className={`tabs_wrapper z-40 max-w-[800px] flex-col flex items-center justify-center w-full bg-white ${
+				isScrolled
+					? 'bg-red-60 fixed top-[58px] h-[90px]'
+					: 'relative h-[120px] top-0'
+			}`}
+		>
 			<div
-				className="tab_buttons absolute flex justify-between z-20"
-				style={{ top: '-33px' }}
+				className={`tab_buttons  flex justify-between top-[-33px] ${
+					isScrolled ? 'border-b border-solid border-white' : 'absolute'
+				}`}
 			>
 				<div
 					className={`button relative w-[150px] h-[33px]  border-t border-r border-l border-solid border-gray-300 text-center ${
@@ -34,9 +39,9 @@ const Tabs = () => {
 				</div>
 			</div>
 			{activeTab === 0 ? (
-				<ImpactScoreTab amount={amount} />
+				<ImpactScoreTab amount={amount} isScrolled={isScrolled} />
 			) : (
-				<CumulatedImpactTab />
+				<CumulatedImpactTab isScrolled={isScrolled} />
 			)}
 		</div>
 	);
