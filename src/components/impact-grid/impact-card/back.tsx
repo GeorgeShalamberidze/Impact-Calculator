@@ -1,11 +1,13 @@
+import BarChart from '@/components/chart';
 import { Card } from '@/types/CardType';
 
 type BackPropType = {
 	card: Card;
+	chartData: number[];
 };
 
-const Back = ({ card }: BackPropType) => {
-	const { icons, title, color } = card;
+const Back = ({ card, chartData }: BackPropType) => {
+	const { icons, title, color, showFullYear } = card;
 	return (
 		<div className="back absolute top-0 left-0 right-0 bottom-0 w-full h-full">
 			<div className="back_wrapper relative">
@@ -15,7 +17,13 @@ const Back = ({ card }: BackPropType) => {
 							<img src={`src/assets/svg/${icon}`} key={card.title} />
 						))}
 					</div>
-					<div className="chart_wrapper">chart here!</div>
+					<div className="chart_wrapper">
+						<BarChart
+							data={chartData}
+							color={color}
+							showFullYear={showFullYear}
+						/>
+					</div>
 				</div>
 				<div className="back_lower_body w-full h-10">
 					<div

@@ -1,9 +1,9 @@
 import { Card } from '@/types/CardType';
-import '../style.css';
 import { ACTIVE_TAB } from '@/enums/activeTab.enum';
 import useImpactCard from '../hooks/useImpactCard';
 import Front from './front';
 import Back from './back';
+import '../style.css';
 
 const ImpactCard = ({ card }: { card: Card }) => {
 	const {
@@ -11,7 +11,7 @@ const ImpactCard = ({ card }: { card: Card }) => {
 		impactNumber,
 		equivalentImpactNumber,
 		fixedEquivalent,
-		fullYearBar,
+		chartData,
 	} = useImpactCard({
 		card,
 	});
@@ -31,7 +31,7 @@ const ImpactCard = ({ card }: { card: Card }) => {
 				impactNumber={impactNumber}
 			/>
 
-			{card.chartGroup && <Back card={card} />}
+			{card.chartGroup && <Back card={card} chartData={chartData} />}
 		</div>
 	);
 };

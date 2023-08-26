@@ -1,4 +1,6 @@
-import { createContext, useState } from 'react';
+import { Card } from '@/types/CardType';
+import axios from 'axios';
+import { createContext, useState, useEffect } from 'react';
 
 type CardContextProviderProps = {
 	children: React.ReactNode;
@@ -11,6 +13,7 @@ export type CardContextType = {
 	handleDateChange: (date: Date) => void;
 	handleInvestmentChange: (val: any) => void;
 	handleTabClick: (tabIndex: number) => void;
+	cardsData: Card[];
 };
 
 export const CardContext = createContext<CardContextType | null>(null);
@@ -19,7 +22,7 @@ const CardContextProvider = ({ children }: CardContextProviderProps) => {
 	const [activeTab, setActiveTab] = useState<number>(0);
 	const [investment, setInvestment] = useState<number>(3000);
 	const [date, setDate] = useState<Date>(new Date());
-
+	const [cardsData, setCardsData] = useState<Card[]>([]);
 	const min = 1;
 	const max = 1000000;
 
@@ -41,9 +44,16 @@ const CardContextProvider = ({ children }: CardContextProviderProps) => {
 		setDate(date);
 	};
 
+	useEffect(() => {
+		axios
+			.get<Card[]>('src/assets/json/data.json')
+			.then((res) => setCardsData(res.data));
+	}, []);
+
 	return (
 		<CardContext.Provider
 			value={{
+				cardsData,
 				activeTab,
 				investment,
 				date,
