@@ -1,11 +1,15 @@
 import useScroll from '@/hooks/useScroll';
 import CumulatedImpactTab from './cumulated-impact';
-import useTabs from './hook/useTabs';
 import ImpactScoreTab from './impact-score';
+import { useContext } from 'react';
+import { CardContext, CardContextType } from '@/context/CardContext';
+import { ACTIVE_TAB } from '@/enums/activeTab.enum';
 import './style.css';
 
 const Tabs = () => {
-	const { activeTab, amount, handleTabClick } = useTabs();
+	const { activeTab, investment, handleTabClick } = useContext(
+		CardContext
+	) as CardContextType;
 	const { isScrolled } = useScroll();
 
 	return (
@@ -23,7 +27,9 @@ const Tabs = () => {
 			>
 				<div
 					className={`button relative w-[150px] h-[33px]  border-t border-r border-l border-solid border-gray-300 text-center ${
-						activeTab === 0 ? 'bg-white selected' : 'bg-[#ecf9fd]'
+						activeTab === ACTIVE_TAB.IMPACT_SCORE
+							? 'bg-white selected'
+							: 'bg-[#ecf9fd]'
 					} flex items-center justify-center cursor-pointer`}
 					onClick={() => handleTabClick(0)}
 				>
@@ -31,15 +37,17 @@ const Tabs = () => {
 				</div>
 				<div
 					className={`button relative w-[150px] h-[33px] border-t border-r border-l border-solid border-gray-300 text-center ${
-						activeTab === 1 ? 'bg-white selected' : 'bg-[#ecf9fd]'
+						activeTab === ACTIVE_TAB.CUMULATED_IMPACT
+							? 'bg-white selected'
+							: 'bg-[#ecf9fd]'
 					} flex items-center justify-center cursor-pointer`}
 					onClick={() => handleTabClick(1)}
 				>
 					<p className="text-sm font-bold text-[#262626]">CUMULATED IMPACT</p>
 				</div>
 			</div>
-			{activeTab === 0 ? (
-				<ImpactScoreTab amount={amount} isScrolled={isScrolled} />
+			{activeTab === ACTIVE_TAB.IMPACT_SCORE ? (
+				<ImpactScoreTab investment={investment} isScrolled={isScrolled} />
 			) : (
 				<CumulatedImpactTab isScrolled={isScrolled} />
 			)}

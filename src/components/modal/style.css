@@ -1,0 +1,94 @@
+@keyframes modalInputAnimation {
+	0% {
+		height: 0;
+		top: 0;
+	}
+	50% {
+		height: 100%;
+		top: 0;
+	}
+	75% {
+		height: 100%;
+	}
+	100% {
+		height: 3px;
+	}
+}
+
+@keyframes textAnimation {
+	0%,
+	75% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes inputInfoAnimation {
+	0%,
+	75% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes submitButtonAnimation {
+	0%,
+	75% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.submit_button_animation {
+	animation: submitButtonAnimation 0.8s ease-in-out;
+}
+
+.input_info_animation {
+	animation: inputInfoAnimation 0.8s ease-in-out;
+}
+
+.text_modal_animation {
+	animation: textAnimation 0.8s ease-in-out;
+}
+
+.animate-modal-input::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%; /* Start with 100% height */
+	width: 100%;
+	background-color: #d14905;
+	animation: modalInputAnimation 0.8s ease-in-out forwards;
+}
+
+.animate-modal-input::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #d14905;
+}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+}

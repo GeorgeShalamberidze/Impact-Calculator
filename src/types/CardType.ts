@@ -1,4 +1,4 @@
-export type CardType = {
+export type Card = {
 	title: string;
 	icons: [string];
 	color: string;

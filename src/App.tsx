@@ -4,15 +4,15 @@ import Hero from './components/hero';
 import ImpactGrid from './components/impact-grid';
 import Tabs from './components/tabs';
 import { useEffect, useState } from 'react';
-import { CardType } from './types/CardType';
+import { Card } from './types/CardType';
 import axios from 'axios';
 
 const App = () => {
-	const [data, setData] = useState<CardType[]>();
+	const [data, setData] = useState<Card[]>();
 
 	useEffect(() => {
 		axios
-			.get<CardType[]>('src/assets/json/data.json')
+			.get<Card[]>('src/assets/json/data.json')
 			.then((res) => setData(res.data));
 	}, []);
 

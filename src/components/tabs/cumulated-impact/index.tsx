@@ -1,10 +1,7 @@
-import { useState } from 'react';
-
 const CumulatedImpactTab = ({ isScrolled }: any) => {
-	const [cumulatedImpact, setCumulatedImpact] = useState<number>(503);
 	return (
 		<div
-			className={`cumulated_tab_wrapper w-full flex items-center transition-all duration-300 ${
+			className={`cumulated_impact_animation w-full flex items-center transition-all duration-300 ${
 				isScrolled &&
 				'h-[57px] w-screen border-t border-b border-solid border-gray-300'
 			}`}
@@ -49,7 +46,7 @@ const CumulatedImpactTab = ({ isScrolled }: any) => {
 							isScrolled ? 'text-[22px]' : 'text-[32px]'
 						}`}
 					>
-						{`${cumulatedImpact}%`}
+						{`23%`}
 					</div>
 				</div>
 			</div>

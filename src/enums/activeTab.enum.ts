@@ -1,0 +1,4 @@
+export enum ACTIVE_TAB {
+	IMPACT_SCORE = 0,
+	CUMULATED_IMPACT = 1,
+}

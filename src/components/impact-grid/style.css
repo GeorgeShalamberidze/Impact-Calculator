@@ -1,0 +1,22 @@
+.grid_container {
+	perspective: 3000px;
+}
+
+.flippable_card {
+	margin: 0 auto;
+	transform-style: preserve-3d;
+	transition: transform 1000ms;
+}
+
+.flippable_card.active_side {
+	transform: rotateY(180deg);
+}
+
+.front,
+.back {
+	backface-visibility: hidden;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
