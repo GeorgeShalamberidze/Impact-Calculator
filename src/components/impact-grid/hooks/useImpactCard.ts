@@ -25,6 +25,7 @@ const useImpactCard = ({ card }: { card: Card }) => {
 		impactNumber,
 		equivalentImpactNumber,
 		activeTab,
+		fullYearBar: impact,
 	};
 };
 

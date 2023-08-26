@@ -20,3 +20,9 @@
 .back {
 	transform: rotateY(180deg);
 }
+
+.chart_wrapper {
+	height: calc(278.4px - 40px);
+	width: 100%;
+	display: inline;
+}

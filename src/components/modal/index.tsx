@@ -1,7 +1,7 @@
 import { GrClose } from 'react-icons/gr';
 import { useContext } from 'react';
-import './style.css';
 import { CardContext, CardContextType } from '@/context/CardContext';
+import './style.css';
 
 interface ModalPropTypes {
 	isModalOpen: boolean;
@@ -23,14 +23,14 @@ const Modal = ({ isModalOpen, handleCancel, handleOk }: ModalPropTypes) => {
 					<div
 						className={`text-lg text-[#4b4b4b] mb-5 ${
 							isModalOpen && 'text_modal_animation'
-						}`}
+						} xxxs:text-sm`}
 					>
 						Enter the amount you wish to invest
 					</div>
 					<div
 						className={`relative w-[420px] transition-all duration-300 ${
 							isModalOpen ? 'animate-modal-input' : ''
-						}`}
+						} xxxs:w-[280px]`}
 					>
 						<input
 							onChange={(e) => handleInvestmentChange(e)}

@@ -1,11 +1,11 @@
 import { TabType } from '@/types/TabType';
 import DatePicker from 'react-datepicker';
-import { useState } from 'react';
-import dayjs from 'dayjs';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useContext } from 'react';
+import { CardContext, CardContextType } from '@/context/CardContext';
 
 const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
-	const [date, setDate] = useState(new Date());
+	const { date, handleDateChange } = useContext(CardContext) as CardContextType;
 
 	return (
 		<div
@@ -33,8 +33,9 @@ const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
 						} xxxs:text-[20px]`}
 					>
 						<DatePicker
+							wrapperClassName="datePicker"
 							selected={date}
-							onChange={(date) => setDate(date!)}
+							onChange={handleDateChange}
 							className="w-full text-center m-auto outline-none"
 						/>
 					</div>
