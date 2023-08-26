@@ -18,7 +18,7 @@ const Footer = () => {
 					</span>
 				</p>
 			</div>
-			<div className="logos px-10 flex items-center h-32 sm-max:flex-col justify-evenly">
+			<div className="logos px-10 flex items-center h-32 sm-max:flex-col justify-evenly xxxs:flex-col">
 				<img
 					src={GlobalGoals}
 					alt="global goals company"

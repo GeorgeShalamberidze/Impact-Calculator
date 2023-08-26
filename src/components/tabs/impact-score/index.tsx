@@ -1,13 +1,8 @@
 import Modal from '@/components/modal';
 import { useModal } from '@/hooks/useModal';
+import { TabType } from '@/types/TabType';
 
-const ImpactScoreTab = ({
-	investment,
-	isScrolled,
-}: {
-	investment: number;
-	isScrolled: boolean;
-}) => {
+const ImpactScoreTab = ({ investment, isScrolled }: TabType) => {
 	const { isModalOpen, showModal, handleCancel, handleOk } = useModal();
 
 	return (

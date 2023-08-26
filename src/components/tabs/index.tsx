@@ -49,7 +49,7 @@ const Tabs = () => {
 			{activeTab === ACTIVE_TAB.IMPACT_SCORE ? (
 				<ImpactScoreTab investment={investment} isScrolled={isScrolled} />
 			) : (
-				<CumulatedImpactTab isScrolled={isScrolled} />
+				<CumulatedImpactTab investment={investment} isScrolled={isScrolled} />
 			)}
 		</div>
 	);

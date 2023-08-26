@@ -27,6 +27,8 @@ const useImpactCard = ({ card }: { card: Card }) => {
 	});
 
 	return {
+		impact,
+		equivalentImpact,
 		impactNumber,
 		equivalentImpactNumber,
 		activeTab,

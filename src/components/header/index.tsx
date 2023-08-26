@@ -13,7 +13,7 @@ const Header = () => {
 			>
 				<div
 					className={`logo flex h-[46.7px] transition-all duration-300 ${
-						isScrolled ? 'w-[100px]' : 'w-[156px]'
+						isScrolled ? 'w-[100px] xxs:h-9 mb-3' : 'w-[156px]'
 					}`}
 				>
 					<img src={Fidelity} alt="Fidelity" />
