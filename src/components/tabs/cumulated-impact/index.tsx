@@ -7,8 +7,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
 	const [date, setDate] = useState(new Date());
 
-	console.log(dayjs(date).format('YYYY-MM-DD'));
-
 	return (
 		<div
 			className={`cumulated_impact_animation w-full flex items-center transition-all duration-300 ${
@@ -37,7 +35,7 @@ const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
 						<DatePicker
 							selected={date}
 							onChange={(date) => setDate(date!)}
-							className="w-full text-center m-auto"
+							className="w-full text-center m-auto outline-none"
 						/>
 					</div>
 				</div>

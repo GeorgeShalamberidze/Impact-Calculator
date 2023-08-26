@@ -5,9 +5,11 @@ import { animated } from 'react-spring';
 import useImpactCard from '../hooks/useImpactCard';
 
 const ImpactCard = ({ card }: { card: Card }) => {
-	const { activeTab, impactNumber, equivalentImpactNumber } = useImpactCard({
-		card,
-	});
+	const { activeTab, impactNumber, equivalentImpactNumber, fixedEquivalent } =
+		useImpactCard({
+			card,
+		});
+
 	return (
 		<div
 			className={`flippable_card ${
@@ -60,8 +62,8 @@ const ImpactCard = ({ card }: { card: Card }) => {
 									color: `${card?.color}`,
 								}}
 							>
-								{card.fixedEquivalent ? (
-									`${card.fixedEquivalent} %`
+								{fixedEquivalent ? (
+									`${fixedEquivalent} %`
 								) : (
 									<animated.p>
 										{equivalentImpactNumber.to((n) => n.toFixed(1))}
