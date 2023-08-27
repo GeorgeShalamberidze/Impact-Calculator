@@ -1,7 +1,7 @@
 import { TabType } from '@/types/TabType';
 import DatePicker from 'react-datepicker';
 import useCumulatedImpact from './useCumulatedImpact';
-import { animated, SpringValue } from 'react-spring';
+import { animated } from 'react-spring';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {

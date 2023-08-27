@@ -23,7 +23,7 @@ const BarChart = ({ data, color, showFullYear }: BarChartPropTypes) => {
 			.attr('width', w)
 			.attr('height', h)
 			.style('overflow', 'hidden')
-			.style('margin-top', '35px')
+			.style('margin-top', '40px')
 			.style('margin-left', '35px')
 			.style('fill', color);
 
@@ -39,6 +39,7 @@ const BarChart = ({ data, color, showFullYear }: BarChartPropTypes) => {
 				.attr('font-size', '10px');
 
 		const maxYValue = Math.max(...data);
+		const minXValue = Math.max(...data);
 		const tickCount = Math.min(maxYValue, 10);
 
 		// Setup X/Y Scale
@@ -47,11 +48,11 @@ const BarChart = ({ data, color, showFullYear }: BarChartPropTypes) => {
 			.domain(data.map((_: number, i: number) => i))
 			.range([0, w])
 			.padding(0.5);
-		const yScale = d3.scaleLinear().domain([0, maxYValue]).range([h, 40]); // Y axis
+		const yScale = d3.scaleLinear().domain([0, maxYValue]).range([h, 40]);
 
 		// Axes
-		const xAxis = d3.axisBottom(xScale).ticks(data.length);
-		const yAxis = d3.axisLeft(yScale).ticks(tickCount);
+		const xAxis = d3.axisBottom(xScale);
+		const yAxis = d3.axisLeft(yScale).ticks(null, minXValue);
 
 		svg
 			.append('g')
@@ -65,7 +66,7 @@ const BarChart = ({ data, color, showFullYear }: BarChartPropTypes) => {
 			.data(data)
 			.join('rect')
 			.attr('x', (_: any, i: any) => xScale(i) as any)
-			.attr('y', (d) => yScale(Math.min(d as number, 180)))
+			.attr('y', (d) => yScale(Math.min(d as number, 100)))
 			.attr('width', xScale.bandwidth())
 			.attr('height', (val: any) => h - yScale(val))
 			.attr('stroke', (_, i) => (i === 0 ? 'none' : color))

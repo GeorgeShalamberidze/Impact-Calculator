@@ -25,7 +25,7 @@ const Back = ({ card, chartData }: BackPropType) => {
 						/>
 					</div>
 				</div>
-				<div className="back_lower_body w-full h-10">
+				<div className="back_lower_body w-full h-[40px] flex items-center justify-center">
 					<div
 						className="flex items-center justify-center text-[16px] "
 						style={{
