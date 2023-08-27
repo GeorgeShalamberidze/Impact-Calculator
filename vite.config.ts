@@ -16,5 +16,11 @@ export default defineConfig(() => {
 				usePolling: true,
 			},
 		},
+		resolve: {
+			alias: {
+				'~': rootPath,
+				'@': srcPath,
+			},
+		},
 	};
 });
