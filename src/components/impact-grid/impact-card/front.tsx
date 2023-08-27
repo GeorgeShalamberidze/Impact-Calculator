@@ -1,5 +1,5 @@
-import { Card } from '@/types/CardType';
 import { animated, SpringValue } from 'react-spring';
+import { Card } from 'src/types/CardType';
 
 type FrontPropType = {
 	card: Card;
