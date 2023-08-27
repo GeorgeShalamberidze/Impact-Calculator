@@ -1,11 +1,13 @@
 import { TabType } from '@/types/TabType';
 import DatePicker from 'react-datepicker';
+import useCumulatedImpact from './useCumulatedImpact';
+import { animated, SpringValue } from 'react-spring';
 import 'react-datepicker/dist/react-datepicker.css';
-import { useContext } from 'react';
-import { CardContext, CardContextType } from '@/context/CardContext';
 
 const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
-	const { date, handleDateChange } = useContext(CardContext) as CardContextType;
+	const { cumulatedSavingNumber, date, handleDateChange } = useCumulatedImpact({
+		investment,
+	});
 
 	return (
 		<div
@@ -59,7 +61,10 @@ const CumulatedImpactTab = ({ isScrolled, investment }: TabType) => {
 							isScrolled ? 'text-[22px]' : 'text-[32px]'
 						} `}
 					>
-						{`23%`}
+						<animated.p>
+							{cumulatedSavingNumber.to((n: number) => n.toFixed(0))}
+						</animated.p>
+						%
 					</div>
 				</div>
 			</div>

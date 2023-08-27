@@ -51,7 +51,8 @@
 	}
 }
 
-.submit_button_animation {
+.submit_button_animation,
+.close_btn_animation {
 	animation: submitButtonAnimation 0.8s ease-in-out;
 }
 

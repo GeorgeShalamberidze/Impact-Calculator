@@ -1,5 +1,5 @@
 import { CardContext, CardContextType } from '@/context/CardContext';
-import { CalculateCumulativeImpact } from '@/helpers/calculateCumulativeImpact';
+import { calculateCumulativeImpact } from '@/helpers/calculateCumulativeImpact';
 import { springNumberFunc } from '@/helpers/springNumberFunc';
 import { Card } from '@/types/CardType';
 import { useContext } from 'react';
@@ -8,6 +8,7 @@ const useImpactCard = ({ card }: { card: Card }) => {
 	const { activeTab, investment, date } = useContext(
 		CardContext
 	) as CardContextType;
+
 	const { normalizedEquivalent, normalizedImpact, fixedEquivalent } = card;
 	const originalImpact = (normalizedImpact * investment) / 1000000;
 	const originalEquivalentImpact =
@@ -21,7 +22,7 @@ const useImpactCard = ({ card }: { card: Card }) => {
 		normalizedEquivalent && equivalentImpact
 	);
 
-	const cumulatedBarData = CalculateCumulativeImpact(impact, date);
+	const cumulatedBarData = calculateCumulativeImpact(impact, date);
 	const chartData = [cumulatedBarData, impact];
 
 	return {

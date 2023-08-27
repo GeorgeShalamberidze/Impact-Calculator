@@ -38,17 +38,20 @@ const BarChart = ({ data, color, showFullYear }: BarChartPropTypes) => {
 				.attr('letter-spacing', '2.2px')
 				.attr('font-size', '10px');
 
+		const maxYValue = Math.max(...data);
+		const tickCount = Math.min(maxYValue, 10);
+
 		// Setup X/Y Scale
 		const xScale = d3
 			.scaleBand()
 			.domain(data.map((_: number, i: number) => i))
 			.range([0, w])
 			.padding(0.5);
-		const yScale = d3.scaleLinear().domain([0, h]).range([h, 40]); // Y axis
+		const yScale = d3.scaleLinear().domain([0, maxYValue]).range([h, 40]); // Y axis
 
 		// Axes
 		const xAxis = d3.axisBottom(xScale).ticks(data.length);
-		const yAxis = d3.axisLeft(yScale);
+		const yAxis = d3.axisLeft(yScale).ticks(tickCount);
 
 		svg
 			.append('g')

@@ -57,7 +57,9 @@ const Modal = ({ isModalOpen, handleCancel, handleOk }: ModalPropTypes) => {
 					</div>
 				</div>
 				<div
-					className="close border border-solid border-gray-400 w-fit absolute right-10 top-5 cursor-pointer p-2"
+					className={`${
+						isModalOpen && 'close_btn_animation'
+					} border border-solid border-gray-400 w-fit absolute right-10 top-5 cursor-pointer p-2`}
 					onClick={handleCancel}
 				>
 					<GrClose size={30} style={{ color: 'red' }} />

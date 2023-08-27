@@ -4,7 +4,7 @@ export const springNumberFunc = (val: number) => {
 		from: { number: 0 },
 		number: val,
 		delay: 50,
-		config: { mass: 1, tension: 20, friction: 10 },
+		config: { mass: 1, tension: 120, friction: 17 },
 	});
 
 	return {
