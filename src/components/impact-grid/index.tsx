@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import ImpactCard from './impact-card';
-import './style.css';
 import { CardContext, CardContextType } from '@/context/CardContext';
+import './style.css';
 
 const ImpactGrid = () => {
 	const { cardsData } = useContext(CardContext) as CardContextType;

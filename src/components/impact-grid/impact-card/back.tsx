@@ -1,5 +1,5 @@
-import BarChart from 'src/components/chart';
-import { Card } from 'src/types/CardType';
+import BarChart from '@/components/chart';
+import { Card } from '@/types/CardType';
 
 type BackPropType = {
 	card: Card;

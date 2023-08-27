@@ -5,7 +5,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig(() => {
 	const rootPath = path.resolve(process.cwd());
-	const srcPath = `${rootPath}`;
+	const srcPath = `${rootPath}/src`;
 
 	return {
 		plugins: [react()],
