@@ -32,7 +32,7 @@ const CardContextProvider = ({ children }: CardContextProviderProps) => {
 
 	useEffect(() => {
 		axios
-			.get<Card[]>('src/assets/json/data.json')
+			.get<Card[]>('assets/json/data.json')
 			.then((res) => setCardsData(res.data));
 	}, []);
 

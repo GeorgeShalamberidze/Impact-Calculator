@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: 'Questrial', system-ui, sans-serif;
+	}
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin-top: 100px;
+	height: 100vh;
+}

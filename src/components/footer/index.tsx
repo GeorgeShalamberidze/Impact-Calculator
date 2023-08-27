@@ -1,6 +1,6 @@
 import { AiOutlineRight } from 'react-icons/ai';
-import GlobalGoals from '@/assets/images/global-goals.png';
-import PriPrinciples from '@/assets/images/pri-principles.png';
+import GlobalGoals from '../../assets/images/global-goals.png';
+import PriPrinciples from '../../assets/images/pri-principles.png';
 
 const Footer = () => {
 	return (

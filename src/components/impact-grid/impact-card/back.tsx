@@ -1,5 +1,5 @@
-import BarChart from '@/components/chart';
-import { Card } from '@/types/CardType';
+import BarChart from 'src/components/chart';
+import { Card } from 'src/types/CardType';
 
 type BackPropType = {
 	card: Card;
@@ -14,7 +14,7 @@ const Back = ({ card, chartData }: BackPropType) => {
 				<div className="back_body flex flex-col items-center">
 					<div className="img absolute w-[30px] top-[20px] right-[15px]">
 						{icons.map((icon: string) => (
-							<img src={`src/assets/svg/${icon}`} key={card.title} />
+							<img src={`assets/svg/${icon}`} key={card.title} />
 						))}
 					</div>
 					<div className="chart_wrapper">

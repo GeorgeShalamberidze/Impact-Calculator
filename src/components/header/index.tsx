@@ -1,5 +1,5 @@
-import Fidelity from '@/assets/svg/fidelity.svg';
-import useScroll from '@/hooks/useScroll';
+import Fidelity from '../../assets/svg/fidelity.svg';
+import useScroll from '../../hooks/useScroll';
 
 const Header = () => {
 	const { isScrolled } = useScroll();
