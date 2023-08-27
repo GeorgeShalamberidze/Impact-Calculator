@@ -20,7 +20,7 @@ const Front = ({
 				<div className="front_body flex flex-col items-center">
 					<div className="h-[140px] flex justify-center">
 						{card.icons.map((icon: string) => (
-							<img src={`assets/svg/${icon}`} key={card.title} />
+							<img src={`${icon}`} key={card.title} />
 						))}
 					</div>
 					<div className="title">
