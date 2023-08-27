@@ -7,7 +7,7 @@ type BackPropType = {
 };
 
 const Back = ({ card, chartData }: BackPropType) => {
-	const { icons, title, color, showFullYear } = card;
+	const { icons, title, color, showFullYear, impactUnit, chartGroup } = card;
 	return (
 		<div className="back absolute top-0 left-0 right-0 bottom-0 w-full h-full">
 			<div className="back_wrapper relative">
@@ -19,9 +19,11 @@ const Back = ({ card, chartData }: BackPropType) => {
 					</div>
 					<div className="chart_wrapper">
 						<BarChart
+							chartGroup={chartGroup}
 							data={chartData}
 							color={color}
 							showFullYear={showFullYear}
+							impactUnit={impactUnit}
 						/>
 					</div>
 				</div>

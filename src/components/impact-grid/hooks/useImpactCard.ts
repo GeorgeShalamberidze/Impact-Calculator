@@ -14,8 +14,8 @@ const useImpactCard = ({ card }: { card: Card }) => {
 	const originalEquivalentImpact =
 		(normalizedEquivalent * investment) / 1000000;
 
-	const impact = Math.round(Math.abs(originalImpact) * 10) / 10;
-	const equivalentImpact = Math.round(originalEquivalentImpact * 10) / 10;
+	const impact = (originalImpact * 10) / 10;
+	const equivalentImpact = (originalEquivalentImpact * 10) / 10;
 
 	const { number: impactNumber } = springNumberFunc(normalizedImpact && impact);
 	const { number: equivalentImpactNumber } = springNumberFunc(

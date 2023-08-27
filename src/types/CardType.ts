@@ -3,7 +3,7 @@ export type Card = {
 	icons: [string];
 	color: string;
 	normalizedImpact: number;
-	chartGroup: 'a' | 'b' | 'c' | null;
+	chartGroup: ChartGroup;
 	impactUnit: string;
 	impactDP: number;
 	showFullYear: boolean;
@@ -13,3 +13,5 @@ export type Card = {
 	equivalentIcon: string;
 	fixedEquivalent?: number;
 };
+
+export type ChartGroup = 'a' | 'b' | 'c' | null;

@@ -13,10 +13,10 @@ const useCumulatedImpact = ({ investment }: { investment: number }) => {
 	if (cardsData.length > 0 && date) {
 		const { normalizedImpact } = cardsData[0];
 		const originalImpact = (normalizedImpact * investment) / 1000000;
-		const impact = Math.round(Math.abs(originalImpact) * 10) / 10;
+		const impact = (originalImpact * 10) / 10;
 		const cumulatedBarData = calculateCumulativeImpact(impact, date);
 
-		cumulatedSaving = Math.round((cumulatedBarData / impact) * 100);
+		cumulatedSaving = (cumulatedBarData / impact) * 100;
 	}
 	const { number: cumulatedSavingNumber } = springNumberFunc(cumulatedSaving);
 

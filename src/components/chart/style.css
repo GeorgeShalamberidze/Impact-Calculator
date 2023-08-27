@@ -1,0 +1,37 @@
+.y-axis path,
+.tick line {
+	display: none;
+}
+
+.foreignObject.bar-label {
+	fill: red;
+	border: 1px solid red !important;
+	width: 200;
+	background-color: red !important;
+}
+
+.label-div {
+	background-color: #e4e1de;
+	font-size: 12px;
+	color: #101215;
+	border-radius: 5px;
+	width: 60px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+	font-weight: bold;
+	position: relative;
+	overflow: visible;
+	height: 38px;
+}
+
+.label-div .pointer {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #e4e1de;
+	bottom: -3px;
+	transform: rotate(45deg);
+}

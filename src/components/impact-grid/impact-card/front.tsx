@@ -36,7 +36,7 @@ const Front = ({
 					<div className="impact_unit">
 						<p className="text-xl font-bold mb-[11px]">
 							<animated.span>
-								{impactNumber.to((n: number) => n.toFixed(1))}
+								{impactNumber.to((n: number) => Math.abs(n.toFixed(1) as any))}
 							</animated.span>{' '}
 							{card.impactUnit}
 						</p>

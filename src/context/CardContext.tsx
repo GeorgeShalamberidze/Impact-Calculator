@@ -27,21 +27,26 @@ const CardContextProvider = ({ children }: CardContextProviderProps) => {
 	const [cardsData, setCardsData] = useState<Card[]>([]);
 	const [cumulatedImpactSavings, setCumulatedImpactSavings] =
 		useState<number>(0);
-	const min = 1;
-	const max = 1000000;
+	const minInvestmentVal = 1;
+	const maxInvestmentVal = 1000000;
 
-	///
-
-	///
+	useEffect(() => {
+		axios
+			.get<Card[]>('src/assets/json/data.json')
+			.then((res) => setCardsData(res.data));
+	}, []);
 
 	const handleInvestmentChange = (e: any) => {
 		const { value }: { value: number } = e.target;
-		const formattedVal = Math.max(min, Math.min(max, Number(value)));
+		const formattedVal = Math.max(
+			minInvestmentVal,
+			Math.min(maxInvestmentVal, Number(value))
+		);
 
 		if (isNaN(value)) return;
 
 		setInvestment(formattedVal);
-		if (value > max) setInvestment(investment);
+		if (value > maxInvestmentVal) setInvestment(investment);
 	};
 
 	const handleTabClick = (tabIndex: number) => {
@@ -51,12 +56,6 @@ const CardContextProvider = ({ children }: CardContextProviderProps) => {
 	const handleDateChange = (date: Date) => {
 		setDate(date);
 	};
-
-	useEffect(() => {
-		axios
-			.get<Card[]>('src/assets/json/data.json')
-			.then((res) => setCardsData(res.data));
-	}, []);
 
 	return (
 		<CardContext.Provider
